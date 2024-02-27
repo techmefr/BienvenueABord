@@ -3,14 +3,21 @@ html,
 body {
   margin: 0;
 }
-
-header,
-.hero {
-  background-color: #a306b6;
+nav {
   display: flex;
-  text-align: center;
-  padding-bottom: 1rem;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 5px;
 }
+nav div {
+  display: flex;
+  justify-content: space-evenly;
+  width: 30%;
+}
+nav div a {
+}
+
 .hero {
   justify-content: space-around;
 }
@@ -22,10 +29,7 @@ footer {
   flex-direction: column;
   padding: 1rem;
 }
-.navbar {
-  display: flex;
-  justify-content: space-between;
-}
+
 .logo {
   width: 4rem;
 }
