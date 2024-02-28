@@ -3,17 +3,18 @@ html,
 body {
   margin: 0;
 }
-
+header {
+  flex-direction: column;
+}
 header,
 .hero {
   background-color: #a306b6;
   display: flex;
-  text-align: center;
+  flex-wrap: wrap-reverse;
+  justify-content: space-evenly;
   padding-bottom: 1rem;
 }
-.hero {
-  justify-content: space-around;
-}
+
 footer {
   background-color: #d9d9d9;
   width: 100vw;
@@ -21,13 +22,22 @@ footer {
   align-items: center;
   flex-direction: column;
   padding: 1rem;
+  margin-top: 2rem;
 }
-.navbar {
+nav {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 1rem;
 }
-.logo {
+nav img {
   width: 4rem;
+}
+nav div {
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+  width: 30%;
 }
 
 .avatar {
@@ -36,12 +46,12 @@ footer {
   border-radius: 50%;
   padding: 0.25rem;
 }
-.recentArticles {
-  display: flex;
-}
+
 .gridRecentArticles {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .articles {
   background-color: #d9d9d9;
@@ -52,18 +62,10 @@ footer {
   text-align: center;
   margin: 10px;
   padding: 20px;
-  width: calc(33.33% - 20px);
-  box-sizing: border-box;
   border-radius: 15px;
 }
-.itemNavbar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.itemNavbar ul li {
-  color: white;
-  justify-content: space-between;
+main p {
+  margin: 1rem 25%;
 }
 button {
   background-color: #a306b6;
@@ -83,6 +85,7 @@ h1 {
   font-size: 4rem;
 }
 h2 {
+  text-align: center;
   color: #a306b6;
   font-size: 2rem;
   margin: 4rem;
@@ -91,8 +94,7 @@ h3 {
   font-size: 2rem;
   margin: 2rem;
 }
-h1,
-h2,
+
 h3 {
   font-family: "Montserrat", sans-serif;
   text-align: center;
@@ -101,27 +103,35 @@ p,
 a {
   font-family: "Source Sans 3", sans-serif;
 }
-.itemNavbar ul li {
-  color: white;
-  display: inline;
-  margin-right: 1rem;
-}
+
 .recentArticles {
+  flex-wrap: wrap;
+}
+.articles {
+  width: clamp(300px, 30%, 400px);
+  height: clamp(300px, 30%, 400px);
+}
+.imgArticle {
+  width: clamp(200px, 6em, 400px);
+  aspect-ratio: 1;
+}
+main {
   display: flex;
   flex-direction: column;
 }
-.imgArticle {
-  width: 20vw;
-}
-@media (min-width: 768px) {
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-@media (max-width: 767px) {
+
+@media (max-width: 992px) {
   header {
+    display: flex;
+  }
+  nav {
     flex-direction: column;
-    flex-wrap: wrap;
+  }
+  main p {
+    margin: 1rem 2rem;
+  }
+  nav div {
+    margin: 1rem;
+    width: 100%;
   }
 }
